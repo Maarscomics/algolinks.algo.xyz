@@ -255,6 +255,26 @@ const data = [
         url: "https://a-wallet.net/",
         tags: ["dapps", "Wallets", "Self-Custody", "Desktop"],
       },
+      {
+        name: "AID: Kare wallet",
+        url: "https://www.aid.technology/kare",
+        tags: [
+          "Kare",
+          "Survivor",
+          "Red",
+          "Cross",
+          "Aid",
+          "Disaster",
+          "Relief",
+          "Distribution",
+          "Survivors",
+          "Mobile",
+          "Wallets",
+          "Self-Custody",
+          "Desktop",
+        ],
+        hidden: true,
+      },
     ],
   },
   {
@@ -331,6 +351,7 @@ const data = [
         url: "http://algorandstats.com/",
         tags: ["Charts", "Trackers", "Governance"],
         note: "old info",
+        hidden: true,
       },
     ],
   },
@@ -366,6 +387,7 @@ const data = [
         name: "app.folks.finance",
         url: "https://app.folks.finance/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "algorai finance",
@@ -376,16 +398,19 @@ const data = [
         name: "app.algorai.finance",
         url: "https://app.algorai.finance/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "c3 (shutdown)",
         url: "https://c3.io/",
         tags: ["Shutdown", "c3.io"],
+        hidden: true,
       },
       {
         name: "silodefi (Testnet)",
         url: "https://www.silodefi.com/",
         tags: ["Defi", "Finance", "Testnet"],
+        hidden: true,
       },
       {
         name: "cometa",
@@ -404,6 +429,7 @@ const data = [
         name: "app.cometa.farm",
         url: "https://app.cometa.farm/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "rug.ninja",
@@ -450,6 +476,7 @@ const data = [
         name: "app.compx",
         url: "https://app.compx.io/farms",
         tags: ["dapps"],
+        hidden: true,
       },
     ],
   },
@@ -496,16 +523,24 @@ const data = [
         name: "app.algomint",
         url: "https://app.algomint.io/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "basket.algomint",
         url: "https://basket.algomint.io/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
-        name: "p.network",
+        name: "p network",
         url: "https://p.network/",
         tags: ["Defi", "Finance", "Minting", "Bridges", "pbtc", "PNT"],
+      },
+      {
+        name: "dapp.P network",
+        url: "https://dapp.p.network/#/swap?asset=btc&from=btc&to=eth",
+        tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "wormhole",
@@ -560,6 +595,18 @@ const data = [
           "Base",
         ],
       },
+      {
+        name: "equito finance",
+        url: "https://equitofinance.com/",
+        tags: ["Defi", "Finance", "bridge"],
+        hidden: true,
+      },
+      {
+        name: "dapp equito finance",
+        url: "https://bridge.equitofinance.com/bridge",
+        tags: ["dapps"],
+        hidden: true,
+      },
     ],
   },
   {
@@ -604,6 +651,7 @@ const data = [
         name: "app.pact.fi",
         url: "https://app.pact.fi/swap",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "tinyman",
@@ -626,6 +674,7 @@ const data = [
         name: "app.tinyman",
         url: "https://app.tinyman.org/#/swap?asset_in=0&asset_out=31566704",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "app.humble (Shutdown)",
@@ -670,6 +719,7 @@ const data = [
         name: "Bartle Doo",
         url: "https://vestige.fi/asset/829992960",
         tags: ["Bartle Doo"],
+        hidden: true,
       },
       {
         name: "Orange",
@@ -1308,6 +1358,7 @@ const data = [
         name: "goplausible app",
         url: "https://goplausible.xyz/",
         tags: ["dapps"],
+        hidden: true,
       },
       {
         name: "thisdid",
@@ -1501,9 +1552,21 @@ const data = [
     icon: "./icons/slot.png",
     links: [
       {
-        name: "algo-casino",
+        name: "Algo Casino",
         url: "http://algo-casino.com/",
         tags: ["Gaming", "Betting", "gambling"],
+      },
+      {
+        name: "Algo Casino Poker",
+        url: "https://poker.algo-casino.com/",
+        tags: ["Gaming", "Betting", "gambling", "dapps", "poker"],
+        hidden: true,
+      },
+      {
+        name: "Algo Casino Bet",
+        url: "https://bet.algo-casino.com/?t=1",
+        tags: ["Gaming", "Betting", "gambling", "dapps", "poker"],
+        hidden: true,
       },
       {
         name: "smartpoker",

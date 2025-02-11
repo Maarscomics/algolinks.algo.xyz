@@ -202,14 +202,17 @@
 
         // Add links to the grid
         item.links.forEach((link) => {
-          const linkElement = document.createElement('a');
-          linkElement.href = link.url;
-          linkElement.target = '_blank';
-          linkElement.className = 'link-text search-item';
-          linkElement.textContent = link.name;
-          linkElement.setAttribute('data-tags', link.tags.join(' '));
-          linksGrid.appendChild(linkElement);
+          if (!link.hidden) { // Check if the link is not hidden
+            const linkElement = document.createElement('a');
+            linkElement.href = link.url;
+            linkElement.target = '_blank';
+            linkElement.className = 'link-text search-item';
+            linkElement.textContent = link.name;
+            linkElement.setAttribute('data-tags', link.tags.join(' '));
+            linksGrid.appendChild(linkElement);
+          }
         });
+  
 
         categoryDiv.appendChild(linksGrid);
         linkTable.appendChild(categoryDiv);
@@ -223,41 +226,47 @@
   </main>
 
 <!-- JavaScript for Search and Background Functionality updated 6/13/24-->
- <script>
-   function performSearch(query) {
+<script>
+  // Function to perform the search and filter displayed items
+  function performSearch(query) {
     const items = document.querySelectorAll('.search-item');
+
     items.forEach(item => {
       const tags = item.getAttribute('data-tags') ? item.getAttribute('data-tags').toLowerCase() : '';
+
+      // Match item based on query
       if (item.textContent.toLowerCase().includes(query) || tags.includes(query)) {
-        item.style.display = 'block';
+        item.style.display = 'block'; // Show the matching item
       } else {
-        item.style.display = 'none';
+        item.style.display = 'none'; // Hide the non-matching item
       }
     });
-   }
 
-    document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    performSearch(query);
-   });
+    // Hide entire categories if no links within them are visible
+    const categories = document.querySelectorAll('.category-border');
+    categories.forEach(category => {
+      const visibleLinks = category.querySelectorAll('.search-item[style*="display: block"]');
+      if (visibleLinks.length > 0) {
+        category.style.display = 'block'; // Show category if it has visible links
+      } else {
+        category.style.display = 'none'; // Hide category if no links are visible
+      }
+    });
+  }
 
-    document.getElementById('searchOptions').addEventListener('change', function() {
-    const query = this.value.toLowerCase();
-    performSearch(query);
-   });
+  // Event listener for search input
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const queryInput = this.value.toLowerCase(); // Get input value and convert to lowercase
+    performSearch(queryInput); // Perform the search
+  });
 
-    document.getElementById('backgroundSelect').addEventListener('change', function() {
-    const selectedImage = this.value;
-    document.getElementById('bgOverlay').style.backgroundImage = `url('${selectedImage}')`;
-   });
+  // Event listener for dropdown filter
+  document.getElementById('searchOptions').addEventListener('change', function () {
+    const selectedOption = this.value.toLowerCase(); // Get selected option and convert to lowercase
+    performSearch(selectedOption); // Perform the search using the selected option as the query
+  });
+</script>
 
-    // Listen for input event on the search input field added 6/12/24
-    document.getElementById('searchInput').addEventListener('input', function() {
-    const queryInput = this.value.toLowerCase();
-    performSearch(queryInput);
-   });
- </script>
 
 
 <!-- Footer never changed 6/12/24-->
